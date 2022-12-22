@@ -1,0 +1,27 @@
+- name: Basic Ansible Functions
+  hosts: localhost
+  connection: local
+  vars:
+    git_clone_path: 'git-test'
+    #tf_project_path: '/tmp/ansible-pac-test/terraform'
+    #policy_as_code_plan_validation_url: "http://localhost:8181/v1/data/corp/policies"
+    git_repo_https_clone_url: "https://github.com/cnorville90/netapp-demo.git"
+
+  tasks:
+    - name: Create a directory
+      file:
+        path: "{{ git_clone_path }}"
+        state: directory
+        mode: 0755
+      check_mode: no
+
+    - name: Clone Git repo holding Terraform scripts
+      git:
+        repo: "{{ git_repo_https_clone_url }}"
+        dest: "{{ git_clone_path }}"
+        clone: yes
+        force: yes
+        single_branch: yes
+        version: master
+      check_mode: no
+
