@@ -1,2 +1,12 @@
 [nodes]
-caesar.thenorvilles.com ansible_user=cnorville
+caesar.thenorvilles.com  
+attila.thenorvilles.com 
+xerxes.thenorvilles.com 
+
+[nodes:vars]
+ansible_user=cnorville
+
+[pis]
+raspberrypi-4.thenorvilles.com ansible_user=pi
+raspberrypi.thenorvilles.com   ansible_user=pi
+pi4.thenorvilles.com           ansible_user=cnorville
