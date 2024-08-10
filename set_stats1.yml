@@ -7,3 +7,7 @@
     - name: Display a message
       ansible.builtin.debug:
         msg: "Welcome my son to the Machine...."
+
+    - name: Fact Dump
+      ansible.builtin.debug:
+        var: ansible_facts
