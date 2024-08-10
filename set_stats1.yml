@@ -1,0 +1,9 @@
+---
+- name: A playbook to demonstrate set_stats in a workflow
+  hosts: xerxes.thenorvilles.com
+
+  tasks:
+
+    - name: Display a message
+      ansible.builtin.debug:
+        msg: "Welcome my son to the Machine...."
