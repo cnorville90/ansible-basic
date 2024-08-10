@@ -1,6 +1,6 @@
 ---
 - name: Set stats playbook 2
-  hosts: xerxes.thenorvilles.com
+  hosts: all
   gather_facts: false
 
   tasks: 
