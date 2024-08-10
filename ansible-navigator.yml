@@ -1,8 +1,13 @@
 ---
 ansible-navigator:
+  ansible:
+    inventory:
+      entries:
+        - ./inventory
   execution-environment:
     image: localhost/ee-supported-rhel8:v1.0
     pull:
       policy: missing
   playbook-artifact:
     enable: false
+  mode: stdout

@@ -1,0 +1,15 @@
+---
+- name: Set stats playbook 2
+  hosts: xerxes.thenorvilles.com
+  gather_facts: false
+
+  tasks: 
+
+    - name: Display vars set in the previous playbook
+      ansible.builtin.debug:
+        msg: 
+          - "dist_version_per_host_true_agg_true =   {{ dist_version_per_host_true_agg_true | default('not set') }}"
+          - "dist_version_per_host_true_agg_false =  {{ dist_version_per_host_true_agg_false | default('not set')}}"
+          - "dist_version_per_host_false_agg_true =  {{ dist_version_per_host_false_agg_true | default('not set')}}"
+          - "dist_version_per_host_false_agg_false = {{ dist_version_per_host_false_agg_false | default('not set')}}"
+      run_once: true    
