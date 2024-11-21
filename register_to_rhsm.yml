@@ -1,0 +1,13 @@
+---
+- name: Playbook to register systems to RHSM using Rhel System Roles
+  hosts: all
+  gather_facts: true
+
+  roles: 
+    - role: rhel-system-roles.rhc
+  vars: 
+    rhc_auth:
+      activation_keys:
+        keys: 
+          - "{{ activationkey }}"
+    rhc_organization: 13001722
