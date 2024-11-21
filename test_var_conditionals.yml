@@ -1,0 +1,16 @@
+---
+- name: A playbook to do string comparision with vars
+  hosts: all
+  gather_facts: false
+  vars:
+    foo: 'florky'
+    bar: 'skeezer'
+    baz: 'florky'
+
+  tasks:
+
+    - name: Testing condistionals
+      ansible.builtin.debug:
+        msg: "Conditional passed the test"
+      when:
+        - foo == bar
