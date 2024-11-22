@@ -11,6 +11,6 @@
     rhc_organization: 13001722
 
   roles: 
-    - redhat.rhel-system-roles.rhc
+    - redhat.rhel_system_roles.rhc
 
   
