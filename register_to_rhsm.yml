@@ -9,6 +9,8 @@
         keys: 
           - "{{ activationkey }}"
     rhc_organization: 13001722
+    release: 9
+
 
   roles: 
     - redhat.rhel_system_roles.rhc
