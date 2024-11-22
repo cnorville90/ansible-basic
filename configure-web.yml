@@ -31,6 +31,17 @@
         mode: '0644'
       notify: Restart_httpd
 
+    - name: Add node to th F5 Load Balancer
+      f5networks.f5_modules.bigip_node:
+        provider:
+          server: "{{ f5_server }}"
+          user: "{{ f5_user }}"
+          password: "{{ f5_password }}"
+          server_port: 8443
+          validate_certs: false
+        host: "{{ ansible_facts.default_ipv4.address }}"
+        name: "{{ ansible_facts.fqdn }}"
+
   handlers:
 
     - name: Restart_httpd
