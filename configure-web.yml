@@ -9,25 +9,9 @@
 
   tasks:
 
-      # Lets make sure the F5 is up and accessible
-    - name: Collect F5 Big-IP Facts
-      f5networks.f5_modules.bigip_device_info:
-        gather_subset:
-          - system-info
-        provider:
-          server: "{{ f5_server }}"
-          user: "{{ f5_user }}"
-          password: "{{ f5_password }}"
-          server_port: 8443
-          validate_certs: false
-          no_f5_teem: true
-      register: device_facts
-      delegate_to: localhost
-
-    - name: Display F5 Big-IP System Info
+    - name: Dump facts 
       ansible.builtin.debug:
-        var: device_facts
-      delegate_to: localhost
+        var: ansible_facts
 
     - name: Install Apache on node "{{ inventory_hostname }}"
       ansible.builtin.yum:
