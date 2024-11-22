@@ -44,11 +44,12 @@
       ansible.builtin.copy:
         content: "Hello from {{ inventory_hostname }}"
         dest: /var/www/html/index.html
-      notify: restart_httpd
+        mode: '0644'
+      notify: Restart_httpd
 
   handlers:
 
-    - name: restart_httpd
+    - name: Restart_httpd
       ansible.builtin.service:
         name: httpd
         state: restarted
