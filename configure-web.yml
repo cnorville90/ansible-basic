@@ -11,7 +11,7 @@
 
     - name: Dump facts
       ansible.builtin.debug:
-        var: ansible_facts
+        var: ansible_facts.default_ipv4.address
 
     - name: Install Apache on node "{{ inventory_hostname }}"
       ansible.builtin.yum:
