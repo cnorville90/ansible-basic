@@ -8,7 +8,7 @@
     f5_password: "{{ lookup('env', 'F5_PASSWORD') }}"
 
   tasks:
-      
+
       # Lets make sure the F5 is up and accessible
     - name: Collect F5 Big-IP Facts
       f5networks.f5_modules.bigip_device_info:
