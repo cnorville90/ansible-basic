@@ -1,6 +1,6 @@
 ---
-- name: 
-  hosts: Install, start and enable Apache
+- name: Install, start and enable Apache
+  hosts: all
   become: true
   gather_facts: false
 
