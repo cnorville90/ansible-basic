@@ -3,11 +3,14 @@
   hosts: all
   gather_facts: true
 
-  roles: 
-    - role: rhel-system-roles.rhc
   vars: 
     rhc_auth:
       activation_keys:
         keys: 
           - "{{ activationkey }}"
     rhc_organization: 13001722
+
+  roles: 
+    - redhat.rhel-system-roles.rhc
+
+  
