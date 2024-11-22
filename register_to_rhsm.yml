@@ -1,7 +1,7 @@
 ---
 - name: Playbook to register systems to RHSM using Rhel System Roles
   hosts: all
-  gather_facts: true
+  become: true
 
   vars: 
     rhc_auth:
