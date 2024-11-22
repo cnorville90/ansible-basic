@@ -1,0 +1,31 @@
+---
+- name: 
+  hosts: Install, start and enable Apache
+  gather_facts: false
+
+  tasks: 
+
+    - name: Install Apache
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+
+    - name: Start and enable the Apache service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Create a Stock index.html
+      ansible.builtin.copy:
+        content: "Hello from {{ inventory_hostname }}"
+        dest: /var/www/html/index.html
+      notify: restart_httpd
+
+  handlers:
+
+    - name: restart_httpd
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+        enabled: true
