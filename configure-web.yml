@@ -2,7 +2,7 @@
 - name: Install, start and enable Apache
   hosts: all
   become: true
-  gather_facts: false
+  gather_facts: true
   vars:
     f5_user: "{{ lookup('env', 'F5_USERNAME') }}"
     f5_password: "{{ lookup('env', 'F5_PASSWORD') }}"
