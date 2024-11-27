@@ -31,7 +31,7 @@
         mode: '0644'
       notify: Restart_httpd
 
-    - name: Add node to th F5 Load Balancer
+    - name: Add node to the F5 Load Balancer
       f5networks.f5_modules.bigip_node:
         provider:
           server: "{{ f5_server }}"
